@@ -1,28 +1,60 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <el-container>
+      <Header :active-tab="activeTab" @select="handleTabSelect">
+
+      </Header>
+      <el-main>
+        <router-view>
+
+        </router-view>
+      </el-main>
+      <el-footer>
+
+      </el-footer>
+    </el-container>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+  import Header from './components/Header';
 
-export default {
-  name: 'app',
-  components: {
-    HelloWorld
+  export default {
+    name: 'app',
+    components: {
+      Header
+    },
+    computed: {
+      activeTab: function() {
+        return this.$route.path
+      }
+    },
+    methods: {
+      handleTabSelect: function (key) {
+        console.log(key);
+        this.$router.push(key);
+      }
+    }
   }
-}
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  html {
+    height: 100%;
+  }
+
+  body {
+    margin: 0;
+    height: 100%;
+    background-color: #d7d6d6;
+  }
+
+  #app {
+    font-family: "PT Sans", serif;
+    font-weight: 400;
+    letter-spacing: 0;
+    font-style: normal;
+    height: 100%;
+    background-color: #ffff;
+  }
 </style>

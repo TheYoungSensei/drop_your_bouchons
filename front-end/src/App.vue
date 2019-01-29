@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <el-container>
-      <Header :active-tab="activeTab" @select="handleTabSelect">
+      <Header :active-tab="activeTab" @select="handleTabSelect" @login="login">
 
       </Header>
       <el-main>
@@ -32,8 +32,10 @@
     },
     methods: {
       handleTabSelect: function (key) {
-        console.log(key);
         this.$router.push(key);
+      },
+      login: function () {
+        this.$router.push('/login');
       }
     }
   }

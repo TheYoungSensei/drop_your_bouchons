@@ -4,7 +4,7 @@
             <el-tab-pane label="Monthly contributors">
                 <ContributorsTable
                         :contributors="contributors"
-                        type="monthly"
+                        :type="monthly"
                         :firstPlace="monthlyFirstPlace"
                         :secondPlace="monthlySecondPlace"
                         :thirdPlace="monthlyThirdPlace"
@@ -14,7 +14,7 @@
             <el-tab-pane label="Contributors of all time">
                 <ContributorsTable
                         :contributors="contributors"
-                        type="total"
+                        :type="total"
                         :firstPlace="firstPlace"
                         :secondPlace="secondPlace"
                         :thirdPlace="thirdPlace"
@@ -28,9 +28,16 @@
 <script>
     import {mapState} from "vuex";
     import ContributorsTable from "../components/ContributorsTable";
+    import { total, monthly } from "../constants";
 
     export default {
         components: {ContributorsTable},
+        data () {
+            return {
+                total: total,
+                monthly: monthly
+            }
+        },
         computed: {
             ...mapState({
                 contributors: 'contributors',
@@ -40,7 +47,7 @@
                 monthlyFirstPlace: 'monthlyFirstPlace',
                 monthlySecondPlace: 'monthlySecondPlace',
                 monthlyThirdPlace: 'monthlyThirdPlace'
-            })
+            }),
         }
     }
 </script>

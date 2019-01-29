@@ -4,6 +4,7 @@ import Home from './views/Home'
 import Progress from './views/Progress'
 import Initiative from './views/Initiative'
 import Contributors from './views/Contributors'
+import Login from './views/Login'
 
 
 Vue.use(Router);
@@ -29,6 +30,11 @@ export default new Router({
       path: '/contributors',
       name: 'contributors',
       component: Contributors
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: Login
     }
   ]
 })

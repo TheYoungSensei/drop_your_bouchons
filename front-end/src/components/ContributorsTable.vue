@@ -47,10 +47,12 @@
 </template>
 
 <script>
+    import { total } from '../constants';
+
     export default {
         props: {
             contributors: Array,
-            type: String,
+            type: Number,
             firstPlace: String,
             secondPlace: String,
             thirdPlace: String
@@ -60,7 +62,7 @@
                 return this.contributors;
             },
             sort: function () {
-                if (this.type === 'total') {
+                if (this.type === total) {
                     return 'stoppers';
                 }
                 return 'monthlyStoppers';

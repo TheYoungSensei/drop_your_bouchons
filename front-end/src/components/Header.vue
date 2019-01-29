@@ -17,7 +17,12 @@
                 Initiative
             </el-menu-item>
         </el-menu>
-        <font-awesome-icon class="login" size="2x" icon="user-astronaut"></font-awesome-icon>
+        <font-awesome-icon
+                :class="loginClass"
+                size="2x"
+                icon="user-astronaut"
+                @click="login"
+        ></font-awesome-icon>
     </el-header>
 </template>
 
@@ -29,11 +34,20 @@
         computed: {
           activeIndex: function () {
               return this.activeTab;
+          },
+          loginClass: function () {
+            if (this.$route.path === '/login') {
+                return 'current-login';
+            }
+            return 'login';
           }
         },
         methods: {
             handleSelect: function (key, keyPath) {
                 this.$emit('select', key);
+            },
+            login: function () {
+                this.$emit('login');
             }
         }
     }
@@ -88,5 +102,16 @@
     .login {
         float: right;
         margin-top: 12px;
+    }
+
+    .login:hover {
+        color: #409EFF;
+        cursor: pointer;
+    }
+
+    .current-login {
+        float: right;
+        margin-top: 12px;
+        color: #409EFF;
     }
 </style>

@@ -10,13 +10,14 @@
             <el-menu-item index="/progress">
                 Progress
             </el-menu-item>
-            <el-menu-item index="/donators">
-                Donators
+            <el-menu-item index="/contributors">
+                Contributors
             </el-menu-item>
             <el-menu-item index="/initiative">
                 Initiative
             </el-menu-item>
         </el-menu>
+        <font-awesome-icon class="login" size="2x" icon="user-astronaut"></font-awesome-icon>
     </el-header>
 </template>
 
@@ -82,5 +83,10 @@
         margin-bottom: 13px;
         margin-left: 10px;
         margin-right: 10px;
+    }
+
+    .login {
+        float: right;
+        margin-top: 12px;
     }
 </style>

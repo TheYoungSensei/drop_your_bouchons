@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import Home from './views/Home'
 import Progress from './views/Progress'
 import Initiative from './views/Initiative'
-import Scoreboard from './views/Donators'
+import Contributors from './views/Contributors'
 
 
 Vue.use(Router);
@@ -26,9 +26,9 @@ export default new Router({
       component: Initiative
     },
     {
-      path: '/donators',
-      name: 'donators',
-      component: Scoreboard
+      path: '/contributors',
+      name: 'contributors',
+      component: Contributors
     }
   ]
 })

@@ -1,40 +1,76 @@
 <template>
     <div class="progress">
-        <h3>Progress of the plastic stoppers gathering</h3>
-        <h5>Monthly progress</h5>
-        <el-progress :text-inside="true" :percentage="30" :stroke-width="20" status="text">
+        <h1>Progress of the plastic stoppers gathering</h1>
+        <h3>Monthly progress</h3>
+        <el-progress :text-inside="true" :percentage="monthlyPerc" :stroke-width="20" status="text">
 
         </el-progress>
         <p>
-            This month, with your support we have collected 335 of our monthly 7500 plastic stoppers.
+            This month, with your support we have collected <b>{{nbPlasticStoppers}}</b> of our monthly <b>5833</b> plastic stoppers.
         </p>
-        <h5>Progress signification</h5>
+        <h3>Progress signification</h3>
         <div class="progress-div">
             <div class="box-card">
-                <el-progress type="circle" :percentage="50" :stroke-width="12">
+                <el-progress type="circle" :percentage="puppyPerc" :stroke-width="12">
 
                 </el-progress><br>
-                <em>Help the CBCG to adopt a puppy.</em>
+                <em class="boxed-em">Help the CBCG to adopt a puppy.</em>
             </div>
             <div class="box-card">
-                <el-progress type="circle" :percentage="10" :stroke-width="12">
+                <el-progress type="circle" :percentage="dogPerc" :stroke-width="12">
 
                 </el-progress><br>
-                <em>Help the CBCG to train a guide dog.</em>
+                <em class="boxed-em">Help the CBCG to train a guide dog.</em>
             </div>
             <div class="box-card">
-                <el-progress type="circle" :percentage="5" :stroke-width="12">
+                <el-progress type="circle" :percentage="totalPerc" :stroke-width="12">
 
                 </el-progress><br>
-                <em>Help the formation of a guide dog from A to Z.</em>
+                <em class="boxed-em">Help the formation of a guide dog from A to Z.</em>
+            </div>
+        </div>
+        <h3>Thanks to your help</h3>
+        <div class="progress-div">
+            <div class="box-card">
+                <img src="../assets/plastic.png" alt="Image of plastic caps"><br>
+                <em class="boxed-em">We have collected <b>1000</b> plastic stoppers.</em>
+            </div>
+            <div class="box-card">
+                <img src="../assets/dog.png" alt="Image of guide dogs"><br>
+                <em class="boxed-em">We raise <b>5%</b> of one guide dog needed funds.</em>
             </div>
         </div>
     </div>
 </template>
 
 <script>
-    export default {
+    import { mapState } from "vuex";
 
+    const percentage = (percentFor, percentOf) => {
+        if(percentFor === 0 || percentOf === 0) {
+            return 0;
+        }
+        return ((percentFor/percentOf) * 100).toFixed(2)
+    };
+
+    export default {
+        computed: {
+            ...mapState({
+                nbPlasticStoppers: 'nbPlasticStoppers'
+            }),
+            monthlyPerc: function () {
+                return percentage(this.nbPlasticStoppers, 5833,33);
+            },
+            puppyPerc: function () {
+                return percentage(this.nbPlasticStoppers, 1400000);
+            },
+            dogPerc: function () {
+                return percentage(this.nbPlasticStoppers, 31000000);
+            },
+            totalPerc: function () {
+                return percentage(this.nbPlasticStoppers, 32400000)
+            }
+        }
     }
 </script>
 
@@ -50,7 +86,18 @@
        text-align: center;
    }
 
+   .box-help {
+       display: -webkit-inline-box;
+       margin-right: 20vh;
+       margin-left: 20vh;
+       text-align: center;
+   }
+
     .progress-div {
         text-align: center;
+        margin-top: 10vh;
+    }
+
+    .boxed-em {
     }
 </style>

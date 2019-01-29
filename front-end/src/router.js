@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import Home from './views/Home'
 import Progress from './views/Progress'
 import Initiative from './views/Initiative'
-import Scoreboard from './views/Scoreboard'
+import Scoreboard from './views/Donators'
 
 
 Vue.use(Router);

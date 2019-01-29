@@ -40,12 +40,12 @@
 
 <style>
   html {
-    height: 100%;
+    min-height: 100%;
   }
 
   body {
     margin: 0;
-    height: 100%;
+    min-height: 100%;
     background-color: #d7d6d6;
   }
 
@@ -54,7 +54,7 @@
     font-weight: 400;
     letter-spacing: 0;
     font-style: normal;
-    height: 100%;
+    min-height: 100%;
     background-color: #ffff;
   }
 </style>

@@ -8,7 +8,7 @@
                 Progress
             </el-menu-item>
             <el-menu-item index="/scoreboard">
-                Scoreboard
+                Donators
             </el-menu-item>
             <el-menu-item index="/initiative">
                 Initiative

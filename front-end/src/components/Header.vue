@@ -1,6 +1,6 @@
 <template>
     <el-header>
-        <a class="logo">
+        <a href="https://wemanity.com/" class="logo">
             <img class="img-logo" src="../assets/LOGO-horizontal.png" alt="Wemanity" />
         </a>
         <el-menu class="nav" :default-active="activeIndex" mode="horizontal" @select="handleSelect">

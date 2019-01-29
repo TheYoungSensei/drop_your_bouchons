@@ -50,7 +50,7 @@
         if(percentFor === 0 || percentOf === 0) {
             return 0;
         }
-        return ((percentFor/percentOf) * 100).toFixed(2)
+        return parseFloat(((percentFor/percentOf) * 100).toFixed(2));
     };
 
     export default {

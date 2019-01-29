@@ -1,6 +1,9 @@
 <template>
     <el-header>
-        <el-menu :default-active="activeIndex" mode="horizontal" @select="handleSelect">
+        <a class="logo">
+            <img class="img-logo" src="../assets/LOGO-horizontal.png" alt="Wemanity" />
+        </a>
+        <el-menu class="nav" :default-active="activeIndex" mode="horizontal" @select="handleSelect">
             <el-menu-item index="/">
                 Home
             </el-menu-item>
@@ -58,8 +61,26 @@
         padding-left: 30px;
         padding-right: 30px;
         -webkit-text-size-adjust: 100%;
-        top:0px;
+        top: 0px;
         transform: translate3d(0px, 0px, 0px);
         transition: background-color .25s ease-in-out;
+    }
+
+    .nav {
+        display: -webkit-inline-box;
+    }
+
+    .logo {
+        width: fit-content;
+        height: fit-content;
+        display: inline;
+    }
+
+    .img-logo {
+        width: 200px;
+        height:auto;
+        margin-bottom: 13px;
+        margin-left: 10px;
+        margin-right: 10px;
     }
 </style>

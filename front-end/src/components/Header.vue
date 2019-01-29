@@ -10,7 +10,7 @@
             <el-menu-item index="/progress">
                 Progress
             </el-menu-item>
-            <el-menu-item index="/scoreboard">
+            <el-menu-item index="/donators">
                 Donators
             </el-menu-item>
             <el-menu-item index="/initiative">

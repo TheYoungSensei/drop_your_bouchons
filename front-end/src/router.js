@@ -26,8 +26,8 @@ export default new Router({
       component: Initiative
     },
     {
-      path: '/scoreboard',
-      name: 'scoreboard',
+      path: '/donators',
+      name: 'donators',
       component: Scoreboard
     }
   ]

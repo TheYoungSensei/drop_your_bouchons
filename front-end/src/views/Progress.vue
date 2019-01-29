@@ -6,7 +6,7 @@
 
         </el-progress>
         <p>
-            This month, with your support we have collected <b>{{nbPlasticStoppers}}</b> of our monthly <b>5833</b> plastic stoppers.
+            This month, with your support we have collected <b>{{monthlyStoppers}}</b> of our monthly <b>5833</b> plastic stoppers.
         </p>
         <h3>Progress signification</h3>
         <div class="progress-div">
@@ -14,13 +14,13 @@
                 <el-progress type="circle" :percentage="puppyPerc" :stroke-width="12">
 
                 </el-progress><br>
-                <em class="boxed-em">Help the CBCG to adopt a puppy.</em>
+                <em class="boxed-em">Help the C.B.C.G. to adopt a puppy.</em>
             </div>
             <div class="box-card">
                 <el-progress type="circle" :percentage="dogPerc" :stroke-width="12">
 
                 </el-progress><br>
-                <em class="boxed-em">Help the CBCG to train a guide dog.</em>
+                <em class="boxed-em">Help the C.B.C.G. to train a guide dog.</em>
             </div>
             <div class="box-card">
                 <el-progress type="circle" :percentage="totalPerc" :stroke-width="12">
@@ -33,11 +33,11 @@
         <div class="progress-div">
             <div class="box-card">
                 <img src="../assets/plastic.png" alt="Image of plastic caps"><br>
-                <em class="boxed-em">We have collected <b>1000</b> plastic stoppers.</em>
+                <em class="boxed-em">We have collected <b>{{totalStoppers}}</b> plastic stoppers.</em>
             </div>
             <div class="box-card">
                 <img src="../assets/dog.png" alt="Image of guide dogs"><br>
-                <em class="boxed-em">We raise <b>5%</b> of one guide dog needed funds.</em>
+                <em class="boxed-em">We have raised <b>{{totalPerc}}%</b> of one guide dog needed funds.</em>
             </div>
         </div>
     </div>
@@ -56,19 +56,20 @@
     export default {
         computed: {
             ...mapState({
-                nbPlasticStoppers: 'nbPlasticStoppers'
+                monthlyStoppers: 'monthlyStoppers',
+                totalStoppers: 'totalStoppers'
             }),
             monthlyPerc: function () {
-                return percentage(this.nbPlasticStoppers, 5833,33);
+                return percentage(this.monthlyStoppers, 5833,33);
             },
             puppyPerc: function () {
-                return percentage(this.nbPlasticStoppers, 1400000);
+                return percentage(this.totalStoppers, 1400000);
             },
             dogPerc: function () {
-                return percentage(this.nbPlasticStoppers, 31000000);
+                return percentage(this.totalStoppers, 31000000);
             },
             totalPerc: function () {
-                return percentage(this.nbPlasticStoppers, 32400000)
+                return percentage(this.totalStoppers, 32400000)
             }
         }
     }

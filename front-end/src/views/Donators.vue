@@ -39,8 +39,14 @@
             >
             </el-table-column>
             <el-table-column
+                prop="monthlyStoppers"
+                label="Plastic stoppers collected this month"
+            >
+
+            </el-table-column>
+            <el-table-column
                 prop="stoppers"
-                label="Collected plastic stoppers"
+                label="Total of collected plastic stoppers"
             >
             </el-table-column>
         </el-table>
